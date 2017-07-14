@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LiPic</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+    <body>
+        <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h1 class="text-center">
+				LiPic
+			</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+    <li class="nav-item"><a href="/home">Test Picture</a></li>
+      <li class="nav-item active"><a href="/palettes">Shared Palette</a></li>
+      <li class="nav-item"><a href="/actions">Your Records</a></li>
+      <li class="nav-item"><a href="/users">Community</a></li>
+    </ul>
+        <ul class="nav navbar-nav navbar-right" data-th-switch="${#authorization.expression('isAuthenticated()')}">
+
+        <li data-th-case="${false}" class="nav-item"><a href="/signup" ><span class="glyphicon glyphicon-pencil" > SignUp</span></a></li>
+        <li data-th-case="${true}" class="nav-item"><a href="/"><span class="glyphicon glyphicon-leaf" data-th-inline="text"> Hello,[[${#httpServletRequest.remoteUser}]]</span></a></li>
+        <li data-th-case="*" class="nav-item"><a href="/"><span class="glyphicon glyphicon-warning-sign" data-th-inline="text"> Error</span></a></li>
+
+     <li><a href="/logout"><span class="glyphicon glyphicon-log-in" ></span></a></li>
+    </ul>
+  </div>
+</nav>
+	<div class="center-block" style="height:30px"></div>
+<!--<div><h3  class="text-center" data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s palettes</h3>
+<hr />
+</div>-->
+<div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Kuler_Id</th>
+     <!--   <th>Cl_Id</th> -->
+        <th>Colors</th>
+        <th>Likes</th>
+        <th>Dislikes</th>
+        <th>Kuler_rating</th>
+     <!--   <th>Cl_rating</th> -->
+        <th>Author</th>
+        <th>DateCreated</th>
+    <!--    <th>FirstUser</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-th-each="palette : ${palettes}">
+          <td data-th-text="${palette.id}"></td>
+          <td data-th-text="${palette.id}"></td>
+   <!--       <td data-th-text="${palette.cl_id}"></td> -->
+          <td>
+              <table style="width:100%;">
+              <tr>
+                  <td data-th-each="color : ${palette.colors}" style="padding: 0px 5px 0px 5px;">
+                      <div class="color_block" data-th-style="|width: 100%; text-align: center; border-radius: 4px; background-color:#${color};|">
+                          <span data-th-text="|#${color}|"></span>
+                      </div>
+                  </td>
+              </tr>
+              </table>
+          </td>
+          <td data-th-text="${palette.numLikes}"></td>
+          <td data-th-text="${palette.numViews}"></td>
+          <td data-th-text="${palette.rating}"></td>
+      <!--    <td data-th-text="${palette.cl_rating}"></td> -->
+          <td data-th-text="${palette.author}"></td>
+
+       <!--   <td data-th-text="${palette.userFirst}"></td> -->
+      </tr>
+      </tbody>
+    </table>
+</div>
+	</div>
+        </div>
+      </div>
+ </body>
+ <footer>  <hr />
+<p class="text-center"> <a href="mailto:lil112@pitt.edu" target="_top">Liping Li</a>'s course project, 2017</p>
+</footer>
+</html>
