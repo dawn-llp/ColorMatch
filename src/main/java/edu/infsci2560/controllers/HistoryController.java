@@ -44,22 +44,22 @@ public class HistoryController {
 
     @RequestMapping(value = "/history/id/{id}", method = RequestMethod.GET)
     public ModelAndView History(@PathVariable("id") Long id) {
-      return new ModelAndView("history", "history", historyRepository.findOne(id))
+      return new ModelAndView("history", "history", historyRepository.findOne(id));
     }
 
     @RequestMapping(value = "/history/pictureID/{pictureID}", method = RequestMethod.GET)
     public ModelAndView History(@PathVariable("pictureID") Long pictureID) {
-      return new ModelAndView("history", "history", historyRepository.findOne(pictureID))
+      return new ModelAndView("history", "history", historyRepository.findOne(pictureID));
     }
 
     @RequestMapping(value = "/history/match_PaID/{match_PaID}", method = RequestMethod.GET)
     public ModelAndView History(@PathVariable("match_PaID") Long id) {
-      return new ModelAndView("history", "history", historyRepository.findByMatch_PaID(id))
+      return new ModelAndView("history", "history", historyRepository.findByMatch_PaID(id));
     }
 
     @RequestMapping(value = "/history/vote_match_PaID/{vote_match_PaID}", method = RequestMethod.GET)
     public ModelAndView History(@PathVariable("vote_match_PaID") Long id) {
-      return new ModelAndView("history", "history", historyRepository.findByVote_match_PaID(id))
+      return new ModelAndView("history", "history", historyRepository.findByVote_match_PaID(id));
     }
 
     @RequestMapping(value = "/history/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")

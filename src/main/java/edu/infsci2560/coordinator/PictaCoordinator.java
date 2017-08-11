@@ -133,7 +133,7 @@ public PictaReqResult PostBinaryImage(MultipartFile image) throws Exception {   
         //palettes结果转存一个临时Tpalettes
         List<Tkuler_themes> m = pictaResp.getKuler_themes();
         List<Tcl_themes> n = pictaResp.getCl_themes();
-        List<MatchPalettes> Tpalettes = new List<MatchPalettes>;
+        List<MatchPalettes> Tpalettes = new List<MatchPalettes>();
         for(int i=0; i<m.size(); i++){
           Tpalettes.add(Tkuler_themesConvertor(m.get(i)));
         }

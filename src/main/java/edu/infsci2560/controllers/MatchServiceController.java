@@ -108,7 +108,7 @@ public class MatchServiceController {
 			                                 pictureId,                          //pictureId optional
 			                                 reqResult.getPalettesId(),
 																			 null,          //paletteId optional
-			                                 formatter2.format(new Date()),      //timestamp
+			                                 formatter2.format(new Date())      //timestamp
 			                                 )).getId();
 
 

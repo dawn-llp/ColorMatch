@@ -71,7 +71,7 @@ public class FileUploadController {
 														formatter.format(new Date()),	//dateCreated
 														uuidFile,						//file
 														null,					//picColor ID
-														null;				  //MatchPalettes ID
+														null)			  //MatchPalettes ID
 		userspicturerepository.save(picInfo);		//save picture info
 
         redirectAttributes.addFlashAttribute("message",

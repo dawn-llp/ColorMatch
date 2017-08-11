@@ -45,7 +45,7 @@ public class History {
 		this.vote_match_PaID = vote_match_PaID;
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		this.dateCreated = formatter.format(new Date());
-
+	}
 
 	/**
 	* Returns value of id

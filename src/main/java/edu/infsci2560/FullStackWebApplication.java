@@ -27,7 +27,7 @@ public class FullStackWebApplication {
 ///-----------------------------------------------fill random data START------------------------------------------
         ///  fill database
         Random r = new Random();
-  /*            
+  /*
         UsersRepository URrepository = ctx.getBean(UsersRepository.class);
         Long[] historyid = {new Long(12306)};
         URrepository.save(new LipicUsers(1L, "Shaylee-Li", "pass","shalyee@gmail.com","09/20/2017",historyid,true));
@@ -58,7 +58,7 @@ public class FullStackWebApplication {
                                             Pa_colors,                      //colors[]
                                             r.nextFloat(5),      //rating
                                             r.nextInt(99),          //numview
-                                            r.nextInt(9),              //numlikes
+                                            r.nextInt(9)              //numlikes
                                             ));
         }
 

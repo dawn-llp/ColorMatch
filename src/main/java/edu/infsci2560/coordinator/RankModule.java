@@ -32,7 +32,6 @@ public class RankModule {
     public void rankFunction(){
       //get rankValue
       int size = unsorted.size();
-      int[] board = new int[];
       for (int i = 0; i < size; i++) {
         rankValue[i] = (float) (getPaletteDistance(pic.getColors(), unsorted.get(i).getColors())
         //  + unsorted.get(i).getRating() rate scale not sure
@@ -41,7 +40,7 @@ public class RankModule {
       //get rank order
       for(int j = 0; j < size; j++){
         int jmax =0;
-        for (int k = 0; k < size; k++;){
+        for (int k = 0; k < size; k++){
           if (rankValue[j] < rankValue[k]) jmax++;
         }
         sorted.set(jmax, unsorted.get(j)); //没有考虑 rankValue相等的情况
