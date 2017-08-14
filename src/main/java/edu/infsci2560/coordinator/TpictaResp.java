@@ -1,4 +1,4 @@
-package edu.infsci2560.models;
+package edu.infsci2560.coordinator;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,7 +7,7 @@ public class TpictaResp implements Serializable {
     private Tinfo info;
     private List<Tkuler_themes> kuler_themes;
     private List<Tcl_themes> cl_themes;
-    
+
     public TpictaResp() {
         super(); //?为什么要加TpictaResq类
     }
