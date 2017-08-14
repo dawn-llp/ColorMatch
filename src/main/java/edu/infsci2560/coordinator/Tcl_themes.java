@@ -1,4 +1,4 @@
-package edu.infsci2560.models;
+package edu.infsci2560.coordinator;
 
 
 import java.io.Serializable;  //Serialization（序列化）是一种将对象以一连串的字节描述的过程

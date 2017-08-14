@@ -1,3 +1,4 @@
+/*
 package edu.infsci2560.controllers;
 
 import javax.validation.Valid;
@@ -76,3 +77,4 @@ public class HistoryController {
         return mv;
     }
 }
+*/

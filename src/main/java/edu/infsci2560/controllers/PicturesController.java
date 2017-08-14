@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class PicturesRepository {
+public class PicturesController {
     @Autowired
     private PicturesRepository repository;
 

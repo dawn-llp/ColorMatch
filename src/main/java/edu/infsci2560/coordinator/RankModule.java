@@ -144,20 +144,4 @@ public class RankModule {
 		this.rankValue = rankValue;
 	}
 
-	/**
-	* Returns value of e
-	* @return
-	*/
-	public RankModul getE() {
-		return e;
-	}
-
-	/**
-	* Sets new value of e
-	* @param
-	*/
-	public void setE(RankModul e) {
-		this.e = e;
-	}
-
 }

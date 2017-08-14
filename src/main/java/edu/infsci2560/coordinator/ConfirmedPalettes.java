@@ -1,3 +1,4 @@
+/*
 package edu.infsci2560.coordinator;
 // 临时的类 没有java persistence api
 import edu.infsci2560.coordinator.SortedPalette;
@@ -7,7 +8,7 @@ public class SortedPalettes {
 
 private List<SortedPalette> sortedPalettes;
 
-public SortedPalettes() {
+public ConfirmedPalettes() {
 								super(); //?为什么要加TpictaResq类
 }
 
@@ -20,3 +21,4 @@ public void setSortedPalette(List<SortedPalette> sortedPalettes){
 }
 
 }
+*/

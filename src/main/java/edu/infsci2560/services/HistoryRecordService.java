@@ -24,7 +24,7 @@ package edu.infsci2560.services;
  */
 @RestController
 @RequestMapping("/public/api/history")
-public class ActionRecordService {
+public class HistoryRecordService {
 
     @Autowired
     private HistoryRepository repository;
@@ -46,5 +46,5 @@ public class ActionRecordService {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.save(actions), headers, HttpStatus.OK);
     }
-  */  
+  */
 }

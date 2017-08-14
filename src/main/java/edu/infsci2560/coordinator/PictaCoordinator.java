@@ -23,6 +23,9 @@ import edu.infsci2560.repositories.PicColorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import edu.infsci2560.coordinator.PictaReqResult;
 
+import edu.infsci2560.coordinator.Tkuler_themes;
+import edu.infsci2560.coordinator.Tcl_themes;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import edu.infsci2560.coordinator.RankModule;
@@ -64,7 +67,7 @@ public PictaCoordinator( MatchPalettesRepository palettesRepository,
         this.picColorsRepository = picColorsRepository;
 }
 
-public PictaCoordinator(String api, int sizeMax, PalettesRepository repository ){      //full constructor
+public PictaCoordinator(String api, int sizeMax, MatchedPalettesRepository repository ){      //full constructor
         this.api = api;
         this.sizeMax = sizeMax;
         this.palettesRepository = palettesRepository;
