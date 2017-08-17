@@ -2,7 +2,7 @@ package edu.infsci2560.coordinator;
 // 临时的类 没有java persistence api
 public class PictaReqResult{
 	private Long picColorId;
-	private List<Long> palettesId;
+	private Long[] palettesId;
 
 
 	/**
@@ -15,7 +15,7 @@ public class PictaReqResult{
 	/**
 	* Default PictaReqResult constructor
 	*/
-	public PictaReqResult(Long picColorId, List<Long> palettesId) {
+	public PictaReqResult(Long picColorId, Long[] palettesId) {
 		super();
 		this.picColorId = picColorId;
 		this.palettesId = palettesId;
@@ -42,7 +42,7 @@ public class PictaReqResult{
 	* Returns value of palettesId
 	* @return
 	*/
-	public List<Long> getPalettesId() {
+	public Long[] getPalettesId() {
 		return palettesId;
 	}
 
@@ -50,7 +50,7 @@ public class PictaReqResult{
 	* Sets new value of palettesId
 	* @param
 	*/
-	public void setPalettesId(List<Long> palettesId) {
+	public void setPalettesId(Long[] palettesId) {
 		this.palettesId = palettesId;
 	}
 }

@@ -10,7 +10,7 @@ public interface MatchPalettesRepository extends PagingAndSortingRepository<Matc
     List<MatchPalettes> findByColors(String[] colors);
 
     //自定义方法
-    public Long check(MatchPalettes m){
+    default public MatchPalettes check(MatchPalettes m){
       @Autowired
       private MatchPalettesRepository repository;
       if(repository.findByColors(m.getColors()) == null){

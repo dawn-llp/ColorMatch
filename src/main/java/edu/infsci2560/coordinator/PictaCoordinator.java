@@ -4,7 +4,7 @@ import com.google.gson.Gson; // json -> obj
 import net.coobird.thumbnailator.Thumbnails; // image compress component
 import java.io.ByteArrayInputStream; // used in image compress process
 import java.io.ByteArrayOutputStream; // used in image compress process
-import edu.infsci2560.models.TpictaResp; // 引用
+
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.HttpResponse;
@@ -21,14 +21,19 @@ import edu.infsci2560.repositories.PicturesRepository;
 import edu.infsci2560.models.PicColors;
 import edu.infsci2560.repositories.PicColorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import edu.infsci2560.coordinator.PictaReqResult;
 
 import edu.infsci2560.coordinator.Tkuler_themes;
 import edu.infsci2560.coordinator.Tcl_themes;
+import edu.infsci2560.coordinator.TpictaResp; // 引
+import edu.infsci2560.coordinator.Tinfo;
+import edu.infsci2560.coordinator.PictaReqResult;
+import edu.infsci2560.coordinator.SortedPalette;
+import edu.infsci2560.coordinator.RankModule;
 
 import java.util.Date;
+import java.util.List;
 import java.text.SimpleDateFormat;
-import edu.infsci2560.coordinator.RankModule;
+
 
 public class PictaCoordinator {
 
@@ -77,7 +82,7 @@ public PictaCoordinator(String api, int sizeMax, MatchedPalettesRepository repos
 // palette convertor
 public MatchPalettes Tkuler_themesConvertor(Tkuler_themes a){
   MatchPalettes m = new MatchPalettes(null, "kuler", a.getId(), a.getAuthor(),
-  a.getColors(), a.getRating(), 0, 0);
+  a.getColors(), Float.parseFloat(a.getRating()), 0, 0);
   return( palettesRepository.check(m) );
 }
 
@@ -147,9 +152,14 @@ public PictaReqResult PostBinaryImage(MultipartFile image) throws Exception {   
         //Tpalettes排序
         RankModule comparison = new RankModule(picColors, Tpalettes);
         comparison.rankFunction();
+        int Tsize = Tpalettes.size();
+        Long[] sortedID = new Long[Tsize];
+        for(int i=0; i<Tsize; i++){
+          sortedID[i] = palettesRepository.save(comparison.getSorted().get(i)).getId();
+        }
 
         return new PictaReqResult(picColorsRepository.save(picColors).getId(),
-        palettesRepository.save(comparison.getSorted()).getId());
+        sortedID);
         /*		LipicPalettes ResultPalette = new LipicPalettes(null,  //id
                               pictaResp.getKuler_themes().get(0).getId(), //kuler_id
                               "n/a",          //temp omit cl
