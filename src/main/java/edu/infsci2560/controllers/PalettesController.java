@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class PalettesController {
     @Autowired
-    private MatchPalettesRepository repository;
+    MatchPalettesRepository repository;
 
        //method = RequestMethod.GET
     @RequestMapping(value = "palettes", method = RequestMethod.GET)
@@ -67,7 +67,7 @@ public class PalettesController {
     }
 
     @RequestMapping(value = "/palettes/view/{id}", method = RequestMethod.PUT)
-    public ModelAndView UpdateVoteById(@PathVariable("id") Long id) {
+    public ModelAndView UpdateViewById(@PathVariable("id") Long id) {
             MatchPalettes palette = repository.findOne(id);
             palette.updateNumViews();
             repository.save(palette);

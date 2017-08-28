@@ -4,6 +4,7 @@ import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import edu.infsci2560.models.MatchPalettes;
 import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public interface MatchPalettesRepository extends PagingAndSortingRepository<MatchPalettes, Long> {
     List<MatchPalettes> findById(Long id);

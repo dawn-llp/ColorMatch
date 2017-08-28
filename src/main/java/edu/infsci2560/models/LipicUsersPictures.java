@@ -1,3 +1,4 @@
+/*
 
 package edu.infsci2560.models;
 
@@ -64,3 +65,4 @@ public class LipicUsersPictures {
 		this.colors = colors;
 	}
 }
+*/

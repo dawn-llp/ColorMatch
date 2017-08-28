@@ -8,7 +8,7 @@ import edu.infsci2560.models.PicColors;
 import edu.infsci2560.repositories.PicColorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import edu.infsci2560.coordinator.PictaReqResult;
-import edu.infsci2560.coordinator.SortedPalettes;
+
 import edu.infsci2560.coordinator.SortedPalette;
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class RankModule {
       for (int i = 0; i < size; i++) {
         rankValue[i] = (float) (getPaletteDistance(pic.getColors(), unsorted.get(i).getColors())
         //  + unsorted.get(i).getRating() rate scale not sure
-          + unsorted.get(i).getNumVotes/(unsorted.get(i).getNumViews+1));
+          + unsorted.get(i).getNumVotes()/(unsorted.get(i).getNumViews()+1));
 		      }
       //get rank order
       for(int j = 0; j < size; j++){
@@ -63,7 +63,7 @@ public class RankModule {
 
     //1
     public float getPaletteDistance(String[] p1, String[] p2){
-      float cd = 0.0;
+      float cd = 0.0f;
       int l1 = p1.length;
       int l2 = p2.length;
       if (l1 <= l2){

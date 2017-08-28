@@ -30,11 +30,11 @@ import java.util.LinkedList;
 @Controller
 public class HistoryController {
     @Autowired
-    PicturesRepository picRepository;
+    private PicturesRepository picRepository;
     @Autowired
-    MatchPalettesRepository palettesRepository;
+    private MatchPalettesRepository palettesRepository;
     @Autowired
-    HistoryRepository historyRepository;
+    private HistoryRepository historyRepository;
 
     @RequestMapping(value = "history", method = RequestMethod.GET)
     public ModelAndView List() {
@@ -43,22 +43,22 @@ public class HistoryController {
     }
 
     @RequestMapping(value = "/history/id/{id}", method = RequestMethod.GET)
-    public ModelAndView History(@PathVariable("id") Long id) {
+    public ModelAndView HistoryById(@PathVariable("id") Long id) {
       return new ModelAndView("history", "history", historyRepository.findOne(id));
     }
 
     @RequestMapping(value = "/history/pictureID/{pictureID}", method = RequestMethod.GET)
-    public ModelAndView History(@PathVariable("pictureID") Long pictureID) {
+    public ModelAndView HistoryByPic(@PathVariable("pictureID") Long pictureID) {
       return new ModelAndView("history", "history", historyRepository.findOne(pictureID));
     }
 
     @RequestMapping(value = "/history/match_PaID/{match_PaID}", method = RequestMethod.GET)
-    public ModelAndView History(@PathVariable("match_PaID") Long id) {
+    public ModelAndView HistoryByPa(@PathVariable("match_PaID") Long id) {
       return new ModelAndView("history", "history", historyRepository.findByMatch_PaID(id));
     }
 
     @RequestMapping(value = "/history/vote_match_PaID/{vote_match_PaID}", method = RequestMethod.GET)
-    public ModelAndView History(@PathVariable("vote_match_PaID") Long id) {
+    public ModelAndView HistoryByVote(@PathVariable("vote_match_PaID") Long id) {
       return new ModelAndView("history", "history", historyRepository.findByVote_match_PaID(id));
     }
 

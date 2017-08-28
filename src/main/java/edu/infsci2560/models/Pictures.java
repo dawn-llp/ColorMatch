@@ -117,7 +117,7 @@ public class Pictures {
 	* Sets new value of g
 	* @param
 	*/
-	public void setMatch_PaID(Long match_PaID) {
+	public void setMatch_PaID(Long[] match_PaID) {
 		this.match_PaID = match_PaID;
 	}
 

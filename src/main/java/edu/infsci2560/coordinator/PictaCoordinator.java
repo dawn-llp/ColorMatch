@@ -72,7 +72,7 @@ public PictaCoordinator( MatchPalettesRepository palettesRepository,
         this.picColorsRepository = picColorsRepository;
 }
 
-public PictaCoordinator(String api, int sizeMax, MatchedPalettesRepository repository ){      //full constructor
+public PictaCoordinator(String api, int sizeMax, MatchPalettesRepository repository ){      //full constructor
         this.api = api;
         this.sizeMax = sizeMax;
         this.palettesRepository = palettesRepository;
@@ -136,12 +136,12 @@ public PictaReqResult PostBinaryImage(MultipartFile image) throws Exception {   
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-        PicColors picColors = new PicColors(null, pictaResp.getInfo.getColors());
+        PicColors picColors = new PicColors(null, pictaResp.getInfo().getColors());
 
         //palettes结果转存一个临时Tpalettes
         List<Tkuler_themes> m = pictaResp.getKuler_themes();
         List<Tcl_themes> n = pictaResp.getCl_themes();
-        List<MatchPalettes> Tpalettes = new List<MatchPalettes>();
+        List<MatchPalettes> Tpalettes = new ArrayList<MatchPalettes>();
         for(int i=0; i<m.size(); i++){
           Tpalettes.add(Tkuler_themesConvertor(m.get(i)));
         }

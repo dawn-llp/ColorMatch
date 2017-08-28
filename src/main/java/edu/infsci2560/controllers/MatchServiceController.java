@@ -8,15 +8,20 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.infsci2560.coordinator.PictaCoordinator;
-import edu.infsci2560.models.TpictaResp;
+import edu.infsci2560.coordinator.TpictaResp;
+import edu.infsci2560.coordinator.PictaReqResult;
+import edu.infsci2560.repositories.PicColorsRepository;
+import edu.infsci2560.repositories.PicturesRepository;
+import edu.infsci2560.repositories.HistoryRepository;
+import edu.infsci2560.models.Pictures;
 //import edu.infsci2560.models.LiColors;
 
-import edu.infsci2560.models.LipicPalettes;
-import edu.infsci2560.repositories.PalettesRepository;
+import edu.infsci2560.models.History;
+import edu.infsci2560.models.MatchPalettes;
+import edu.infsci2560.repositories.MatchPalettesRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.UUID;
-
-import edu.infsci2560.models.PictaReqResult;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -24,11 +29,11 @@ import java.text.SimpleDateFormat;
 import edu.infsci2560.storage.StorageFileNotFoundException;
 import edu.infsci2560.storage.StorageService;
 
-import edu.infsci2560.models.LipicUsersPictures;
-import edu.infsci2560.repositories.UsersPicturesRepository;
+//import edu.infsci2560.models.LipicUsersPictures;
+//import edu.infsci2560.repositories.UsersPicturesRepository;
 
-import edu.infsci2560.models.LipicReqActions;
-import edu.infsci2560.repositories.ReqActionsRepository;
+//import edu.infsci2560.models.LipicReqActions;
+//import edu.infsci2560.repositories.ReqActionsRepository;
 
 import javax.servlet.http.HttpServletRequest;
 import edu.infsci2560.models.LipicUsers;
@@ -40,7 +45,7 @@ import java.util.ArrayList;
 public class MatchServiceController {
 
 	@Autowired
-	HttpServletRequest request;
+	private HttpServletRequest request;
 	@Autowired
 	private MatchPalettesRepository palettesrepository;
 	@Autowired

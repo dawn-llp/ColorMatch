@@ -99,7 +99,7 @@ public class History {
 	* Returns value of g
 	* @return
 	*/
-	public Long getMatch_PaID() {
+	public Long[] getMatch_PaID() {
 		return match_PaID;
 	}
 

@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.stream.Collectors;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.UUID;
-import edu.infsci2560.models.LipicUsersPictures;
+import edu.infsci2560.models.Pictures;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

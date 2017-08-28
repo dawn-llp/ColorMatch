@@ -22,9 +22,9 @@ public class SortedPalette {
     this.sourceID = null;
     this.author = null;
     this.colors = null;
-    this.rating = null; // from souce info
-    this.numViews = null; // this site users' actions
-    this.numVotes = null;
+    this.rating = 0.0f; // from souce info
+    this.numViews = 0; // this site users' actions
+    this.numVotes = 0;
 		//this.colorDistance = null;
 	}
 
@@ -113,7 +113,7 @@ public class SortedPalette {
 	* Returns value of g
 	* @return
 	*/
-	public String getColors() {
+	public String[] getColors() {
 		return colors;
 	}
 

@@ -6,7 +6,7 @@ import edu.infsci2560.models.LipicUsers;
 import edu.infsci2560.repositories.UsersRepository;
 
 import edu.infsci2560.models.LipicPalettes;
-import edu.infsci2560.repositories.PalettesRepository;
+import edu.infsci2560.repositories.MatchPalettesRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +56,7 @@ public class FullStackWebApplication {
                                             String.valueOf(r.nextInt(99999)),      //sourcetype
                                             null, //author
                                             Pa_colors,                      //colors[]
-                                            r.nextFloat(5),      //rating
+                                            (float)r.nextInt(5),      //rating
                                             r.nextInt(99),          //numview
                                             r.nextInt(9)              //numlikes
                                             ));
