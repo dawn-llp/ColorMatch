@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.infsci2560.models.MatchPalettes;
-import edu.infsci2560.repositories.MatchPaletteRepository;
+import edu.infsci2560.repositories.MatchPalettesRepository;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -68,14 +68,6 @@ public class PalettesController {
 
     @RequestMapping(value = "/palettes/view/{id}", method = RequestMethod.PUT)
     public ModelAndView UpdateViewById(@PathVariable("id") Long id) {
-            MatchPalettes palette = repository.findOne(id);
-            palette.updateNumViews();
-            repository.save(palette);
-        return new ModelAndView("palettes","palettes",repository.findAll());
-    }
-
-    @RequestMapping(value = "/palettes/view/{id}", method = RequestMethod.PUT)
-    public ModelAndView UpdateVoteById(@PathVariable("id") Long id) {
             MatchPalettes palette = repository.findOne(id);
             palette.updateNumViews();
             repository.save(palette);

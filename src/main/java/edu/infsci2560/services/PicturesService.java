@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+ /*
 package edu.infsci2560.services;
 
-import edu.infsci2560.models.LipicUsersPictures;
-import edu.infsci2560.repositories.UsersPicturesRepository;
+import edu.infsci2560.models.Pictures;
+import edu.infsci2560.repositories.PicturesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,7 @@ import java.text.SimpleDateFormat;
 import edu.infsci2560.storage.StorageFileNotFoundException;
 import edu.infsci2560.storage.StorageService;
 import org.springframework.web.bind.annotation.RequestParam;
+*/
 
 /**
  *
@@ -46,26 +49,26 @@ public class PicturesService {
 
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Iterable<LipicUsersPictures>> list() {
+    public ResponseEntity<Iterable<Pictures>> list() {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findAll(), headers, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<LipicUsersPictures> list(@PathVariable("id") Long id) {
+    public ResponseEntity<Pictures> list(@PathVariable("id") Long id) {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findOne(id), headers, HttpStatus.OK);
     }
 
     // upload a picture
     @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
-    public ResponseEntity<LipicUsersPictures> create(@RequestParam("image") MultipartFile image) {
+    public ResponseEntity<Pictures> create(@RequestParam("image") MultipartFile image) {
 
         // add userspictureinfo
         String uuidFile = UUID.randomUUID().toString() +"-" + image.getOriginalFilename();
         storageService.store(image, uuidFile);
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		LipicUsersPictures picInfo = new LipicUsersPictures(null, 						//create picutre info - id
+		Pictures picInfo = new Pictures(null, 						//create picutre info - id
 														formatter.format(new Date()),	//dateCreated
 														new Long(0),					//palette Id
 														uuidFile,						//file

@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/*
 package edu.infsci2560.services;
 
-import edu.infsci2560.models.LipicPalettes;
-import edu.infsci2560.repositories.PalettesRepository;
+import edu.infsci2560.models.MatchPalettes;
+import edu.infsci2560.repositories.MatchPalettesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
+*/
 
 /**
  *
